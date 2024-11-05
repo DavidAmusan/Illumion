@@ -1,6 +1,8 @@
 Movie Time Graph Analysis
 
 
+
+
 Overview
 
 
@@ -119,7 +121,3 @@ The current implementation assumes that the input data is correctly formatted an
 
 The application currently supports only one movie at a time.
 
-
-
-License
-This project is open-source and available under the MIT License.
