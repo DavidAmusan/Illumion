@@ -67,7 +67,7 @@ def frameByTime(val):
 
 #function to toggle drawing mode
 def toggle_drawing():
-    global drawing_mode
+    global drawing_mode, rect
     drawing_mode = not drawing_mode  
     if drawing_mode:
         root.config(cursor="crosshair")  
