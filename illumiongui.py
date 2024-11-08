@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 #movie and time data
-movie = np.time = np.load('time.npy')
-load('movie.npy')
+time = np.load('time.npy')
+movie = np.load('movie.npy')
 
 #Tkinter window
 root = tk.Tk()
