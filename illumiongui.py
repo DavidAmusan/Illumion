@@ -12,7 +12,6 @@ import concurrent.futures
 time = np.load('time.npy')
 movie = np.load('movie.npy')
 
-
 class Main(tk.tk):
     def __init__(self):
         super().__init__()
@@ -95,10 +94,7 @@ class Main(tk.tk):
             self.config(cursor="")  
         
         self.drawing_mode = not self.drawing_mode  
-
     
-
-
     def now_drawing(self, event):
         self.rois.now_drawing(event.xdata, event.ydata)
         self.canvas_plot.draw()
@@ -112,12 +108,10 @@ class Main(tk.tk):
         
         self.mean_intensities.append(self.calculateintensity.calculate(event))
 
-
     def on_mouse_drag(self,event):
             if self.drawing_mode and event.xdata is not None and event.ydata is not None:
                 now_drawing = self.roi_executor.submit(self.now_drawing, event)
                 
-
     def on_button_release(self, event):
                     if  self.drawing_mode is not None:
 
@@ -144,8 +138,9 @@ class Main(tk.tk):
         self.rois.reset_rectangles()
         self.drawing_mode = False
 
-
                 #start the Tkinter main event loop
 if __name__ == "__main__":
+    from analysis.experiment import load_experiment
+    experiment = load_experiment(PATH)
     roi = Main()  # Create an instance of the MainApplication
     roi.mainloop()  # Start the Tkinter event loop to display the GUI
